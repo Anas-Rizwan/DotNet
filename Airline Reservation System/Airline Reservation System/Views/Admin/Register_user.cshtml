@@ -1,0 +1,156 @@
+﻿@*@model Airline_Reservation_System.Models.AdminB*@
+@model IEnumerable<Airline_Reservation_System.Models.Registration>
+@{ Layout = null; }
+@{
+    ViewBag.Title = "Register_user";
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Hello, world!</title>
+</head>
+<body>
+
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        h2{
+            color:white;
+            margin:35px;
+        }
+        table {
+            border-collapse: inherit;
+        }
+
+       
+        .list_ul {
+            border: 2px solid #32CD32;
+            border-radius: 20px !important;
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        .list_li {
+            padding: 8px !important;
+            text-align: center;
+            background-color: white !important;
+            color: #32CD32 !important;
+            border: 2px solid #32CD32;
+            border-radius: 20px;
+        }
+    </style>
+
+
+    <nav class="navbar navbar-expand-lg  ">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i style="color:white" class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Registered User</h2>
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+
+    @*<table class="table">
+        <ul class="Top_head_ul">
+            <li class="Top_head_li">
+                @Html.DisplayNameFor(model => model.User_Id)
+            </li>
+            <li class="Top_head_li">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </li>
+            <li class="Top_head_li">
+                @Html.DisplayNameFor(model => model.LastName)
+            </li>
+            <li class="Top_head_li">
+                @Html.DisplayNameFor(model => model.CNIC)
+            </li>
+
+        </ul>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr class="list_ul">
+                    <th class="list_li">
+                        @Html.DisplayFor(modelItem => item.User_Id)
+                    </th>
+                    <th class="list_li">
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </th>
+                    <th class="list_li">
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </th>
+                    <th class="list_li">
+                        @Html.DisplayFor(modelItem => item.CNIC)
+                    </th>
+                </tr>
+            }
+        }
+    </table>*@
+
+
+    <table class="table table-primary ">
+        <thead> 
+            <tr class="list_ul">
+                <th scope="col" class="list_li" style="font-weight:900; font-size:20px">ID</th>
+                <th scope="col" class="list_li" style="font-weight:900 ; font-size:20px" ">First Name</th>
+                <th scope="col" class="list_li" style="font-weight:900; font-size:20px" ">Last Name</th>
+                <th scope="col" class="list_li" style="font-weight:900; font-size:20px" ">CNIC</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr class="list_ul">
+                        <th class="list_li">
+                            @Html.DisplayFor(modelItem => item.User_Id)
+                        </th>
+                        <th class="list_li">
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </th>
+                        <th class="list_li">
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </th>
+                        <th class="list_li">
+                            @Html.DisplayFor(modelItem => item.CNIC)
+                        </th>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
